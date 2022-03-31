@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon Link -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <!------------------- HEADER SECTION -------------------->
+    <header>
+      <div class="logo-container">
+        <img src="./images/logo.svg" alt="Splitter Logo" />
+      </div>
+    </header>
+
+    <!------------------- MAIN SECTION -------------------->
+    <main>
+      <form action="#">
+        <!-- Left side of the tip calculator (main) -->
+        <div class="main-calculator">
+          <!-- Bill amount div -->
+          <div class="bill-container">
+            <label for="bill" class="calc-label">Bill</label>
+            <img src="./images/icon-dollar.svg" alt="Dollar sign" />
+            <input
+              type="number"
+              name="amount"
+              id="bill"
+              placeholder="0"
+              required
+            />
+          </div>
+          <!-- Select tip radio button options -->
+          <fieldset>
+            <legend class="calc-label">Select Tip %</legend>
+            <div class="tip-options">
+              <!-- 5% Tip Option -->
+              <input
+                class="radio-input"
+                type="radio"
+                value="option5"
+                name="tip"
+                id="tip_5"
+              />
+              <label class="radio-label" for="tip_5">5%</label>
+              <!-- 10% Tip Option -->
+              <input
+                class="radio-input"
+                type="radio"
+                value="option10"
+                name="tip"
+                id="tip_10"
+              />
+              <label class="radio-label" for="tip_10">10%</label>
+              <!-- 15% Tip Option -->
+              <input
+                class="radio-input"
+                type="radio"
+                value="option15"
+                name="tip"
+                id="tip_15"
+              />
+              <label class="radio-label" for="tip_15">15%</label>
+              <!-- 25% Tip Option -->
+              <input
+                class="radio-input"
+                type="radio"
+                value="option25"
+                name="tip"
+                id="tip_25"
+              />
+              <label class="radio-label" for="tip_25">25%</label>
+              <!-- 50% Tip Option -->
+              <input
+                class="radio-input"
+                type="radio"
+                value="option50"
+                name="tip"
+                id="tip_50"
+              />
+              <label class="radio-label" for="tip_50">50%</label>
+              <!-- Custom Tip Option -->
+              <label for="custom"></label>
+              <input
+                type="number"
+                name="custom-amt"
+                id="custom"
+                placeholder="Custom"
+              />
+            </div>
+          </fieldset>
+          <!-- Number of people div -->
+          <div class="people-container">
+            <label for="people" class="calc-label">Number of People</label>
+            <img src="./images/icon-person.svg" alt="Person icon" />
+            <input
+              type="number"
+              name="people-amt"
+              id="people"
+              placeholder="0"
+            />
+          </div>
+        </div>
+        <!-- Right side of the tip calculator (result) -->
+        <div class="result-container">
+          <!-- Tip amount div -->
+          <div class="amount">
+            <h2>Tip Amount</h2>
+            <span>/ person</span>
+          </div>
+          <p class="amount-num price">$0.00</p>
+          <!-- Total amount div -->
+          <div class="total">
+            <h2>Total</h2>
+            <span>/ person</span>
+          </div>
+          <p class="total-num price">$0.00</p>
+          <!-- Reset Button -->
+          <div class="reset-btn-div">
+            <button class="reset-btn">Reset</button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!------------------- FOOTER SECTION -------------------->
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/AOA19/TipCalculatorApp" target="_blank"
+          >AOA19</a
+        >.
+      </div>
+    </footer>
+  </body>
+</html>
