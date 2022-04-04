@@ -35,9 +35,9 @@
     <main>
       <form action="#">
         <!-- Left side of the tip calculator (main) -->
-        <div class="main-calculator">
-          <!-- Bill amount div -->
-          <div class="bill-container">
+        <div class="left-side">
+          <!---- Bill Section ---->
+          <div class="bill-container calc-container">
             <label for="bill" class="calc-label">Bill</label>
             <img src="./images/icon-dollar.svg" alt="Dollar sign" />
             <input
@@ -48,9 +48,9 @@
               required
             />
           </div>
-          <!-- Select tip radio button options -->
-          <fieldset>
-            <legend class="calc-label">Select Tip %</legend>
+          <!----Tip Section ----->
+          <div class="tip-container">
+            <label class="calc-label">Select Tip %</label>
             <div class="tip-options">
               <!-- 5% Tip Option -->
               <input
@@ -98,17 +98,19 @@
               />
               <label class="radio-label" for="tip_50">50%</label>
               <!-- Custom Tip Option -->
-              <label for="custom"></label>
-              <input
-                type="number"
-                name="custom-amt"
-                id="custom"
-                placeholder="Custom"
-              />
+              <div class="custom-div">
+                <label for="custom"></label>
+                <input
+                  type="number"
+                  name="custom-amt"
+                  id="custom"
+                  placeholder="Custom"
+                />
+              </div>
             </div>
-          </fieldset>
-          <!-- Number of people div -->
-          <div class="people-container">
+          </div>
+          <!------ Number Of People Section ------->
+          <div class="people-container calc-container">
             <label for="people" class="calc-label">Number of People</label>
             <img src="./images/icon-person.svg" alt="Person icon" />
             <input
@@ -121,20 +123,20 @@
           </div>
         </div>
         <!-- Right side of the tip calculator (result) -->
-        <div class="result-container">
-          <!-- Tip amount div -->
+        <div class="right-side">
+          <!---- Tip Amount Section ---->
           <div class="amount">
             <h2>Tip Amount</h2>
             <span>/ person</span>
           </div>
           <p class="amount-num price">$0.00</p>
-          <!-- Total amount div -->
+          <!--- Total Amount Section ---->
           <div class="total">
             <h2>Total</h2>
             <span>/ person</span>
           </div>
           <p class="total-num price">$0.00</p>
-          <!-- Reset Button -->
+          <!---- Reset Button ---->
           <div class="reset-btn-div">
             <button class="reset-btn">Reset</button>
           </div>
