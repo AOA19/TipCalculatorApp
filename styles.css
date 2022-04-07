@@ -1,0 +1,277 @@
+:root {
+  /* Fonts */
+  --ff-primary: Space Mono, monospace;
+  /* Colors */
+  /* Primary: */
+  --clr-cyan: hsl(172, 67%, 45%);
+  /* Neutrals: */
+  --clr-very-dark-cyan: hsl(183, 100%, 15%);
+  --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --clr-grayish-cyan: hsl(184, 14%, 56%);
+  --clr-light-grayish-cyan: hsl(185, 41%, 84%);
+  --clr-very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--ff-primary);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-light-grayish-cyan);
+}
+
+/************************************************* MOBILE STYLING **********************************************************/
+
+/***************************** HEADER STYLING ****************************/
+.logo-container {
+  margin-top: 15px;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/***************************** MAIN STYLING ****************************/
+form {
+  background-color: var(--clr-white);
+  border-radius: 20px;
+  padding: 25px;
+  display: grid;
+  gap: 45px;
+}
+
+/*********  Left Side (main) of calculator styling  *******/
+.left-side {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Start of Styling for Bill, Tip, and # of People Sections */
+input[type="number"] {
+  background-color: var(--clr-very-light-grayish-cyan);
+  border: 1px solid var(--clr-very-light-grayish-cyan);
+  border-radius: 8px;
+  color: var(--clr-very-dark-cyan);
+  cursor: pointer;
+  outline-color: var(--clr-cyan);
+}
+
+input[type="number"]:hover {
+  border: 2px solid var(--clr-light-grayish-cyan);
+}
+
+/* Remove number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc-label {
+  color: var(--clr-dark-grayish-cyan);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+/* Start of Styling for Bill and # of People Sections */
+.wrapper {
+  position: relative;
+}
+
+.wrapper img {
+  position: absolute;
+  left: 18px;
+  top: 60px;
+}
+
+/* This will target the 
+placeholder text */
+#bill::placeholder,
+#people::placeholder {
+  color: var(--clr-grayish-cyan);
+  text-align: right;
+}
+
+/* This will target the placement 
+of the cursor in the input box */
+#bill,
+#people {
+  font-size: 24px;
+  padding: 6px 12px;
+  text-align: right;
+  width: 100%;
+}
+
+/* Start of Styling for Tip Section */
+.tip-container {
+  margin: 30px 0;
+}
+
+/* Styling for the tip 
+option radio buttons */
+.tip-options {
+  justify-content: center;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-label {
+  background-color: var(--clr-very-dark-cyan);
+  border-radius: 8px;
+  color: var(--clr-white);
+  cursor: pointer;
+  font-size: 24px;
+  text-align: center;
+  transition: 0.1s;
+  padding: 8px 30px;
+}
+
+.radio-label:hover {
+  background-color: var(--clr-light-grayish-cyan);
+  color: var(--clr-very-dark-cyan);
+}
+
+/* This will change the background color 
+of the radio button when clicked  */
+.radio-input:checked + .radio-label {
+  background-color: var(--clr-cyan);
+  color: var(--clr-very-dark-cyan);
+}
+
+/* This will target the Custom placeholder 
+text and the text inputted  */
+#custom {
+  font-size: 24px;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+#custom::placeholder {
+  color: var(--clr-dark-grayish-cyan);
+  font-size: 24px;
+  text-align: center;
+}
+
+/******** Right Side (Result) calculator styling ********/
+.right-side {
+  background-color: var(--clr-very-dark-cyan);
+  border-radius: 30px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 25px 22px;
+}
+
+/* Start of Styling for Tip and Total Amount Sections */
+h2 {
+  color: var(--clr-white);
+  font-size: 16px;
+}
+
+span {
+  color: var(--clr-grayish-cyan);
+  font-size: 12px;
+}
+
+.amount,
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 18px;
+}
+
+.price {
+  color: var(--clr-cyan);
+  font-size: 32px;
+}
+
+/* Styling for the reset button */
+.reset-btn-div {
+  padding-top: 20px;
+}
+
+input[type="reset"] {
+  background-color: var(--clr-cyan);
+  border-radius: 5px;
+  border: 1px solid var(--clr-cyan);
+  color: var(--clr-very-dark-cyan);
+  font-size: 20px;
+  outline-color: var(--clr-very-dark-cyan);
+  padding: 10px 30px;
+  text-transform: uppercase;
+  transition: 0.2s;
+  width: 100%;
+}
+
+input[type="reset"]:hover {
+  background-color: var(--clr-light-grayish-cyan);
+  border-color: var(--clr-light-grayish-cyan);
+}
+
+/***************************** FOOTER STYLING ****************************/
+/* Attribution Styling */
+.attribution {
+  font-size: 11px;
+  padding: 15px 0;
+  text-align: center;
+}
+.attribution a {
+  color: var(--clr-very-dark-cyan);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: var(--clr-dark-grayish-cyan);
+  text-decoration: underline;
+}
+
+/************************************************* TABLET STYLING **********************************************************/
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  form {
+    margin: 0 100px;
+    padding: 35px;
+  }
+}
+
+/************************************************* DESKTOP STYLING **********************************************************/
+@media screen and (min-width: 769px) {
+  body {
+    margin: 0 auto;
+    max-width: 850px;
+  }
+
+  /* Logo Styling  */
+  .logo-container {
+    margin-top: 70 px;
+    margin-bottom: 40px;
+  }
+
+  /* Main Styling */
+  form {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 35px;
+  }
+
+  /* Tip Section Styling */
+  .tip-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Result Side Styling */
+  .right-side {
+    grid-template-rows: 1fr 2fr;
+    padding: 30px;
+  }
+
+  .price {
+    font-size: 38px;
+  }
+}
