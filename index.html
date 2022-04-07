@@ -37,7 +37,7 @@
         <!-- Left side of the tip calculator (main) -->
         <div class="left-side">
           <!---- Bill Section ---->
-          <div class="bill-container calc-container">
+          <div class="wrapper">
             <label for="bill" class="calc-label">Bill</label>
             <img src="./images/icon-dollar.svg" alt="Dollar sign" />
             <input
@@ -110,7 +110,7 @@
             </div>
           </div>
           <!------ Number Of People Section ------->
-          <div class="people-container calc-container">
+          <div class="wrapper">
             <label for="people" class="calc-label">Number of People</label>
             <img src="./images/icon-person.svg" alt="Person icon" />
             <input
@@ -126,19 +126,23 @@
         <div class="right-side">
           <!---- Tip Amount Section ---->
           <div class="amount">
-            <h2>Tip Amount</h2>
-            <span>/ person</span>
+            <div>
+              <h2>Tip Amount</h2>
+              <span>/ person</span>
+            </div>
+            <p class="price">$0.00</p>
           </div>
-          <p class="amount-num price">$0.00</p>
           <!--- Total Amount Section ---->
           <div class="total">
-            <h2>Total</h2>
-            <span>/ person</span>
+            <div>
+              <h2>Total</h2>
+              <span>/ person</span>
+            </div>
+            <p class="price">$0.00</p>
           </div>
-          <p class="total-num price">$0.00</p>
           <!---- Reset Button ---->
           <div class="reset-btn-div">
-            <button class="reset-btn">Reset</button>
+            <input type="reset" value="Reset" />
           </div>
         </div>
       </form>
@@ -156,5 +160,7 @@
         >.
       </div>
     </footer>
+    <!-- JavaScript Link -->
+    <script src="app.js"></script>
   </body>
 </html>
