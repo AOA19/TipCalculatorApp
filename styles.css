@@ -1,7 +1,7 @@
 :root {
-  /* Fonts */
+  /**** Fonts ****/
   --ff-primary: Space Mono, monospace;
-  /* Colors */
+  /**** Colors ****/
   /* Primary: */
   --clr-cyan: hsl(172, 67%, 45%);
   /* Neutrals: */
@@ -11,6 +11,7 @@
   --clr-light-grayish-cyan: hsl(185, 41%, 84%);
   --clr-very-light-grayish-cyan: hsl(189, 41%, 97%);
   --clr-white: hsl(0, 0%, 100%);
+  --clr-error: hsl(0, 72%, 66%);
 }
 
 * {
@@ -62,11 +63,17 @@ input[type="number"]:hover {
   border: 2px solid var(--clr-light-grayish-cyan);
 }
 
-/* Remove number input spinners */
+/* Remove number input spinners 
+for: Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* Remove input spinners for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .calc-label {
@@ -105,9 +112,20 @@ of the cursor in the input box */
   width: 100%;
 }
 
+/* Error message styling */
+#error-msg {
+  bottom: 70px;
+  color: var(--clr-error);
+  display: none;
+  font-size: 14px;
+  left: 200px;
+  position: absolute;
+}
+
 /* Start of Styling for Tip Section */
-.tip-container {
+fieldset {
   margin: 30px 0;
+  border: none;
 }
 
 /* Styling for the tip 
@@ -204,7 +222,6 @@ input[type="reset"] {
   border: 1px solid var(--clr-cyan);
   color: var(--clr-very-dark-cyan);
   font-size: 20px;
-  outline-color: var(--clr-very-dark-cyan);
   padding: 10px 30px;
   text-transform: uppercase;
   transition: 0.2s;
@@ -213,7 +230,6 @@ input[type="reset"] {
 
 input[type="reset"]:hover {
   background-color: var(--clr-light-grayish-cyan);
-  border-color: var(--clr-light-grayish-cyan);
 }
 
 /***************************** FOOTER STYLING ****************************/
@@ -239,6 +255,10 @@ input[type="reset"]:hover {
     margin: 0 100px;
     padding: 35px;
   }
+
+  #error-msg {
+    left: 380px;
+  }
 }
 
 /************************************************* DESKTOP STYLING **********************************************************/
@@ -263,6 +283,11 @@ input[type="reset"]:hover {
   /* Tip Section Styling */
   .tip-options {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Error message styling */
+  #error-msg {
+    left: 240px;
   }
 
   /* Result Side Styling */
