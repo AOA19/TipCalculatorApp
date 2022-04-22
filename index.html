@@ -49,14 +49,14 @@
             />
           </div>
           <!----Tip Section ----->
-          <div class="tip-container">
-            <label class="calc-label">Select Tip %</label>
+          <fieldset>
+            <legend class="calc-label">Select Tip %</legend>
             <div class="tip-options">
               <!-- 5% Tip Option -->
               <input
                 class="radio-input"
                 type="radio"
-                value="option5"
+                value="5"
                 name="tip"
                 id="tip_5"
               />
@@ -65,7 +65,7 @@
               <input
                 class="radio-input"
                 type="radio"
-                value="option10"
+                value="10"
                 name="tip"
                 id="tip_10"
               />
@@ -74,7 +74,7 @@
               <input
                 class="radio-input"
                 type="radio"
-                value="option15"
+                value="15"
                 name="tip"
                 id="tip_15"
               />
@@ -83,7 +83,7 @@
               <input
                 class="radio-input"
                 type="radio"
-                value="option25"
+                value="25"
                 name="tip"
                 id="tip_25"
               />
@@ -92,7 +92,7 @@
               <input
                 class="radio-input"
                 type="radio"
-                value="option50"
+                value="50"
                 name="tip"
                 id="tip_50"
               />
@@ -108,10 +108,11 @@
                 />
               </div>
             </div>
-          </div>
+          </fieldset>
           <!------ Number Of People Section ------->
           <div class="wrapper">
             <label for="people" class="calc-label">Number of People</label>
+            <label for="" id="error-msg">Can't be zero</label>
             <img src="./images/icon-person.svg" alt="Person icon" />
             <input
               type="number"
@@ -130,7 +131,7 @@
               <h2>Tip Amount</h2>
               <span>/ person</span>
             </div>
-            <p class="price">$0.00</p>
+            <p id="tip-amount" class="price">$0.00</p>
           </div>
           <!--- Total Amount Section ---->
           <div class="total">
@@ -138,7 +139,7 @@
               <h2>Total</h2>
               <span>/ person</span>
             </div>
-            <p class="price">$0.00</p>
+            <p id="total-amount" class="price">$0.00</p>
           </div>
           <!---- Reset Button ---->
           <div class="reset-btn-div">
