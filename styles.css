@@ -7,9 +7,9 @@
   /* Neutrals: */
   --clr-very-dark-cyan: hsl(183, 100%, 15%);
   --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
-  --clr-grayish-cyan: hsl(184, 14%, 56%);
+  --clr-grayish-cyan: hsl(186, 14%, 56%);
   --clr-light-grayish-cyan: hsl(185, 41%, 84%);
-  --clr-very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --clr-very-light-grayish-cyan: hsl(180, 37%, 97%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-error: hsl(0, 72%, 66%);
 }
@@ -63,6 +63,8 @@ input[type="number"]:hover {
   border: 2px solid var(--clr-light-grayish-cyan);
 }
 
+/* Style the border of people input when error message is toggled */
+
 /* Remove number input spinners 
 for: Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
@@ -94,8 +96,7 @@ input[type="number"] {
   top: 60px;
 }
 
-/* This will target the 
-placeholder text */
+/* This will target the placeholder text */
 #bill::placeholder,
 #people::placeholder {
   color: var(--clr-grayish-cyan);
@@ -113,7 +114,7 @@ of the cursor in the input box */
 }
 
 /* Error message styling */
-#error-msg {
+.error {
   bottom: 70px;
   color: var(--clr-error);
   display: none;
@@ -128,8 +129,7 @@ fieldset {
   border: none;
 }
 
-/* Styling for the tip 
-option radio buttons */
+/* Styling for the tip option radio buttons */
 .tip-options {
   justify-content: center;
   display: grid;
@@ -157,15 +157,18 @@ option radio buttons */
   color: var(--clr-very-dark-cyan);
 }
 
-/* This will change the background color 
-of the radio button when clicked  */
+/* This will change the background color of the radio button when clicked  */
 .radio-input:checked + .radio-label {
   background-color: var(--clr-cyan);
   color: var(--clr-very-dark-cyan);
 }
 
-/* This will target the Custom placeholder 
-text and the text inputted  */
+/* Make radio buttons focusable */
+.radio-input:focus {
+  outline: 2px solid var(--clr-cyan);
+}
+
+/* This will target the custom placeholder text and the text inputted  */
 #custom {
   font-size: 24px;
   height: 100%;
@@ -199,8 +202,7 @@ span {
   font-size: 12px;
 }
 
-.amount,
-.total {
+.total-amount {
   display: flex;
   justify-content: space-between;
   padding: 15px 18px;
@@ -216,20 +218,29 @@ span {
   padding-top: 20px;
 }
 
-input[type="reset"] {
+.reset-btn[aria-disabled="true"] {
+  cursor: not-allowed;
   background-color: var(--clr-cyan);
   border-radius: 5px;
   border: 1px solid var(--clr-cyan);
   color: var(--clr-very-dark-cyan);
   font-size: 20px;
+  opacity: 0.25;
+  outline-color: var(--clr-white);
   padding: 10px 30px;
   text-transform: uppercase;
   transition: 0.2s;
   width: 100%;
 }
 
-input[type="reset"]:hover {
+.reset-btn.active {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.reset-btn.active:hover {
   background-color: var(--clr-light-grayish-cyan);
+  border: 1px solid var(--clr-light-grayish-cyan);
 }
 
 /***************************** FOOTER STYLING ****************************/
@@ -241,6 +252,7 @@ input[type="reset"]:hover {
 }
 .attribution a {
   color: var(--clr-very-dark-cyan);
+  outline-color: var(--clr-white);
   text-decoration: none;
 }
 
@@ -250,19 +262,20 @@ input[type="reset"]:hover {
 }
 
 /************************************************* TABLET STYLING **********************************************************/
-@media only screen and (min-width: 600px) and (max-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 820px) {
   form {
     margin: 0 100px;
     padding: 35px;
   }
 
-  #error-msg {
-    left: 380px;
+  .error {
+    font-size: 16px;
+    left: 375px;
   }
 }
 
 /************************************************* DESKTOP STYLING **********************************************************/
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 821px) {
   body {
     margin: 0 auto;
     max-width: 850px;
@@ -286,8 +299,8 @@ input[type="reset"]:hover {
   }
 
   /* Error message styling */
-  #error-msg {
-    left: 240px;
+  .error {
+    left: 220px;
   }
 
   /* Result Side Styling */
