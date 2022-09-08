@@ -45,7 +45,7 @@
               name="amount"
               id="bill"
               placeholder="0"
-              required
+              step="any"
             />
           </div>
           <!----Tip Section ----->
@@ -102,7 +102,7 @@
                 <label for="custom"></label>
                 <input
                   type="number"
-                  name="custom-amt"
+                  name="custom"
                   id="custom"
                   placeholder="Custom"
                 />
@@ -112,38 +112,44 @@
           <!------ Number Of People Section ------->
           <div class="wrapper">
             <label for="people" class="calc-label">Number of People</label>
-            <label for="" id="error-msg">Can't be zero</label>
+            <span id="error-msg" class="error"></span>
             <img src="./images/icon-person.svg" alt="Person icon" />
             <input
               type="number"
               name="people-amt"
               id="people"
               placeholder="0"
-              required
             />
           </div>
         </div>
         <!-- Right side of the tip calculator (result) -->
         <div class="right-side">
           <!---- Tip Amount Section ---->
-          <div class="amount">
+          <div class="total-amount">
             <div>
               <h2>Tip Amount</h2>
               <span>/ person</span>
             </div>
-            <p id="tip-amount" class="price">$0.00</p>
+            <p id="tip-per-person" class="price">$0.00</p>
           </div>
           <!--- Total Amount Section ---->
-          <div class="total">
+          <div class="total-amount">
             <div>
               <h2>Total</h2>
               <span>/ person</span>
             </div>
-            <p id="total-amount" class="price">$0.00</p>
+            <p id="total-per-person" class="price">$0.00</p>
           </div>
           <!---- Reset Button ---->
           <div class="reset-btn-div">
-            <input type="reset" value="Reset" />
+            <button
+              type="reset"
+              id="reset"
+              class="reset-btn"
+              aria-disabled="true"
+            >
+              Reset
+            </button>
           </div>
         </div>
       </form>
@@ -153,7 +159,7 @@
     <footer>
       <div class="attribution">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        <a href="https://www.frontendmentor.io/profile/AOA19" target="_blank"
           >Frontend Mentor</a
         >. Coded by
         <a href="https://github.com/AOA19/TipCalculatorApp" target="_blank"
