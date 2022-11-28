@@ -138,8 +138,24 @@ fieldset {
 }
 
 .radio-input {
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  position: fixed;
+  width: 100px;
 }
+
+/* This will change the background color of the radio button when clicked  */
+.radio-input:checked+.radio-label {
+  background-color: var(--clr-cyan);
+  color: var(--clr-very-dark-cyan);
+
+}
+
+/* Make radio buttons focusable */
+.radio-input:focus+.radio-label {
+  border: 3px solid orange;
+}
+
 
 .radio-label {
   background-color: var(--clr-very-dark-cyan);
@@ -147,9 +163,9 @@ fieldset {
   color: var(--clr-white);
   cursor: pointer;
   font-size: 24px;
+  padding: 8px 30px;
   text-align: center;
   transition: 0.1s;
-  padding: 8px 30px;
 }
 
 .radio-label:hover {
@@ -157,16 +173,6 @@ fieldset {
   color: var(--clr-very-dark-cyan);
 }
 
-/* This will change the background color of the radio button when clicked  */
-.radio-input:checked + .radio-label {
-  background-color: var(--clr-cyan);
-  color: var(--clr-very-dark-cyan);
-}
-
-/* Make radio buttons focusable */
-.radio-input:focus {
-  outline: 2px solid var(--clr-cyan);
-}
 
 /* This will target the custom placeholder text and the text inputted  */
 #custom {
@@ -250,6 +256,7 @@ span {
   padding: 15px 0;
   text-align: center;
 }
+
 .attribution a {
   color: var(--clr-very-dark-cyan);
   outline-color: var(--clr-white);
