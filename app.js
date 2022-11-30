@@ -9,14 +9,14 @@ const totalPerPerson = document.getElementById("total-per-person");
 const errorMsg = document.getElementById("error-msg");
 const resetBtn = document.querySelector(".reset-btn");
 
-// Initial Values:
+// Initial Value:
 let tipPercent = 0;
 
 //Event handlers:
-document.addEventListener("input", function () {
-  calculateBill();
-  validatePeople();
-});
+document.addEventListener("input", () => {
+    calculateBill();
+    validatePeople();
+  });
 tipCustom.addEventListener("input", customInput);
 // Removes "active" state of tip radio buttons when the custom input is clicked
 tipCustom.addEventListener("click", clearRadios);
