@@ -1,6 +1,7 @@
 # Frontend Mentor - Tip calculator app solution
 
-This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Out to dinner with friends and struggling to calculate the proper tip? Put down that pen and paper and use the Splitter Tip Calculator to determine the tip and total per-person amounts. 
+This app was created for the the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX)
 
 ## Table of contents
 
